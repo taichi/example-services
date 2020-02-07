@@ -25,6 +25,7 @@ jobs:
     - run: npm ci
       working-directory: ./redis
 
+    - run: echo ${{ job.services.redis.ports[6379] }}
     - run: node client.js
       working-directory: ./redis
       env:
